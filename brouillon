@@ -1,0 +1,85 @@
+Intro :
+
+Data must be sorted
+2 stacks, and a set of instruction to manipulate both stacks
+Write a program in C which calculates and displays on std output the smallest prgm, made of "Push swap language" instructions, that sorts
+the integers received as args.
+
+Objectives :
+
+Rigor, use of C, use of basic algos (fousing on their complexity)
+Sorting values is easy, sort them the fastest way is less simple.
+
+Common Instructions :
+
+Project must be written in C
+Project must respect 42's Norm
+Functions should not auit unexpectedly apart from undefined behaviors
+All heap allocated memory must be properly freed when necessary, no leaks tolerated
+If subject requires it -> submit a Makefile which compile using flags -Wall -Wextra -Werror, use cc. Makefile must not relink
+Makefile must at least contain the rules $(NAME), all, clean, fclean and re
+To turn in bonuses, must include a rule bonus to Makefile. Bonuses must be in a different file _bonus.{c/h} if the subjects does not 
+specify anything else
+If project allows libft, must copy its sources and its associated Makefile in a libft folder. Project must compile the lib using its 
+Makefile, then compile the project.
+Good habit to create test programs for projects.
+Submit work in assigned git repo. Only the work in the git repo will be graded
+
+Mandatory Part :
+
+Rules:
+
+2 stacks named a & b
+At the beginning :
+-stack a contains random amount of negative/positive numbers which can't be duplicated
+-stack b is empty
+	Goal is to sort in ascending order numbers into stack a. Following operations at disposal :
+-sa (swap a): Swap the first 2 elements at the top of stack a.
+	Do nothing if there is only one or no elements.
+-sb (swap b): Swap the first 2 elements at the top of stack b.
+	Do nothing if there is only one or no elements.
+-ss : sa and sb at the same time.
+-pa (push a): Take the first element at the top of b and put it at the top of a.
+	Do nothing if b is empty.
+-pb (push b): Take the first element at the top of a and put it at the top of b.
+	Do nothing if a is empty.
+-ra (rotate a): Shift up all elements of stack a by 1.
+	The first element becomes the last one.
+-rb (rotate b): Shift up all elements of stack b by 1.
+	The first element becomes the last one.
+-rr : ra and rb at the same time.
+-rra (reverse rotate a): Shift down all elements of stack a by 1.
+	The last element becomes the first one.
+-rrb (reverse rotate b): Shift down all elements of stack b by 1.
+	The last element becomes the first one.
+-rrr : rra and rrb at the same time.
+
+The prgm :
+
+prgm name = push_swap
+Turn in files = Makefile, *.c *.h
+Makefile = NAME, all, clean, fclean, re
+Arguments = stack a : list of integers
+External fcts = read, write, clean, fclean, re, printf (and all personally coded's equivalent)
+Libft authorized = yes
+Description = Sort stacks
+
+Project must compile with following rules :
+-turn in a Makefile which compiles all srcs files. Must not relink
+-Global variables forbidden
+-Write a prgm named push_swap that takes as an arg stack a formatted as a list of integers. First arg should be at top of stack
+-Prgm must display the smallest list of instructions possible to sort stack a, smallest number being on top
+-instructions must be separated by a '\n' and nothing else
+-goal = sort stack w/ lowest possible nb of operations. during evaluation, nb of instructions found will be compared against a limit.
+If prgm displays a longer list or if nbs are not sorted properly, grade will be 0.
+-if no params specified, prgm must not display anythingand give prompt back
+-in case of error, must display "Error" followed by '\n' on std error. Errors include for ex : some args aren't int, some args are bigger
+than int or there are duplicates.
+
+During evaluation, a binary will be provided to properly check prgm. If checker displays "KO", it means that the push_swap came up w/ a
+list of instructions that doesn't sort the nbs.
+
+Benchmark :
+
+-for minimalist validation (minimal grade of 80), must be able to sort 100 random nbs in fewer than 700 operations
+-for max project vaidation, must be able to sort up to 500 nbs in fewer than 5500 operations.

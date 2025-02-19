@@ -1,0 +1,146 @@
+How does it work?
+
+Pour le 1er nb je peux l'envoyer directement dans la stack b sans me soucier de sa valeur.
+Pour le 2eme nb, je dois verifier s'il est < ou >. 
+
+Dans la stack a je veux que les nbs soient tries dans l'ordre croissant. Il y a 2 options :
+-Je les trie par ordre decroissant dans la stack b puis je les envoie du premier au dernier dans la
+stack a.
+-Je les trie directement dans le bon ordre dans la stack b et je les envoie du premier au dernier 
+dans la stack a.
+
+exemple :
+
+stack a = 527163948
+
+-> envoyer 1 par 1 dans la stack b en comparant a chaque fois
+
+stack b :
+
+1) pb : 
+[stack b = 5]
+[stack a = 27163948]
+
+2) pb : 
+[stack b = 25]
+[stack a = 7163948]
+
+3) sb : 
+[stack b = 52]
+[stack a = 7163948]
+
+4) pb : 
+[stack b = 752]
+[stack a = 163948]
+
+5) pb : 
+[stack b = 1752]
+[stack a = 63948]
+
+6) rb : 
+[stack b = 7521]
+[stack a = 63948]
+
+7) pb: 
+[stack b = 67521]
+[stack a = 3948]
+
+8) sb : 
+[stack b = 76521]
+[stack a = 3948]
+
+9) ra : 
+[stack b = 76521]
+[stack a = 9483]
+
+10) pb :
+[stack b = 976521]
+[stack a = 483]
+
+11) ra :
+[stack b = 976521]
+[stack a = 834]
+
+12) pa :
+[stack b = 8976521]
+[stack a = 34]
+
+13) sb :
+[stack b = 9876521]
+[stack a = 34]
+
+14) rrb :
+[stack b = 1987652]
+[stack a = 34]
+
+15) pa :
+[stack b = 987652]
+[stack a = 134]
+
+16) rrb :
+[stack b = 298765]
+[stack a = 134]
+
+17) pa :
+[stack b = 98765]
+[stack a = 2134]
+
+18) sa :
+[stack b = 98765]
+[stack a = 1234]
+
+19) rrb :
+[stack b = 59876]
+[stack a = 1234]
+
+20) pa :
+[stack b = 9876]
+[stack a = 51234]
+
+21) ra :
+[stack b = 9876]
+[stack a = 12345]
+
+22) rrb :
+[stack b = 6987]
+[stack a = 12345]
+
+23) pa : 
+[stack b = 987]
+[stack a = 612345]
+
+24) ra :
+[stack b = 987]
+[stack a = 123456]
+
+25) rrb :
+[stack b = 798]
+[stack a = 123456]
+
+26) pa :
+[stack b = 98]
+[stack a = 7123456]
+
+27) ra :
+[stack b = 98]
+[stack a = 1234567]
+
+28) sb :
+[stack b = 89]
+[stack a = 1234567]
+
+29) pa :
+[stack b = 9]
+[stack a = 81234567]
+
+30) ra :
+[stack b = 9]
+[stack a = 12345678]
+
+31) pa :
+[stack b = empty]
+[stack a = 123456789]
+
+verifier l'ordre des nbs.
+
+tri des nbs pour une liste de 10 nb, peut prendre 31 operations.
