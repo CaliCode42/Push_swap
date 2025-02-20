@@ -144,3 +144,12 @@ stack b :
 verifier l'ordre des nbs.
 
 tri des nbs pour une liste de 10 nb, peut prendre 31 operations.
+
+fonction pour comparer les int -> trouver le plus petit ?
+
+fonction pour se deplacer dans la stack.
+
+chaque int est un noeud de la stack ??
+chaque int est un noeud qui pointe vers le suivant, le dernier pointe vers le premier.
+
+fonction pour check s la stack est triee.
