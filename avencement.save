@@ -1,0 +1,41 @@
+Etape 1 : reussir a stocker les nombres de l'entree standard dans une liste chainee >> OK (mais avec des char *)
+
+Etape 2 : stocker les nombres en tant qu'int, pour ca 2 options :
+-conserver la structure actuelle et faire des casts a chaque fois >> XXX (Not a Good Idea)
+-modifier la structure de base pour stocker directement des int (ou des longs, en focntion de ce qui est le plus pratique.) >> OK
+
+Etape 3 : gerer a la fois les str contenant une liste de nombres et les listes de nombres sans guillemets (deja OK pour cette partie) >>OK
+
+Etape 4 : creer les fonctions de check d'erreurs :
+-Uniquement des nombres
+-Pas de doublons
+-INT MIN <= nb >= INT MAX
+
+Etape 5 : A ce niveau la, la stack a devrait etre operationnelle. Il est temps de programmer les operations autorisees pour deplacer les
+nombres :
+-sa
+-sb
+-ss
+-pa
+-pb
+-ra
+-rb
+-rr
+-rra
+-rrb
+-rrr
+
+Etape 6 : Creer un programme qui inclut les operations precedemment creees. Faire des tests avec des nombres aleatoires.
+Pour cette etape le but n'est pas encore d'avoir un algo opti, seulement de mettre en place des mouvements pour comprendre le principe.
+
+Etape 7 : Optimiser le programme avec un algorithme qui permet d'effectuer le moins de mouvement possible.
+
+Etape 8 : Verifier les leaks.
+
+Etape 9 : Mettre a la norme.
+
+Etape 10 : Faire les bonus = Creer un checker.
+
+Etape 11 : Verifier avec le checker et voir si je n'ai rien oublier. Relire le sujet.
+
+Etape 12 : Evaluation.

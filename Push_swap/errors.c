@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Push_swap.h                                        :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 12:36:51 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/04 17:31:37 by tcali            ###   ########.fr       */
+/*   Created: 2025/03/06 14:16:32 by tcali             #+#    #+#             */
+/*   Updated: 2025/03/06 14:37:51 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include "libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
+#include "Push_swap.h"
 
-typedef struct s_stack
+char	*check_stack_errors(char **stack)
 {
-	int				nb;
-	int				index;
-	struct s_stack	*prev;
-	struct s_stack	*next;
-}					t_stack;
+	int	i;
+	int	j;
+	int	error;
+	
+	if (!stack)
+	return (NULL);
+	i = 0;
+	error = 0;
+	while (stack[i])
+	{
+		j = 0;
+		while (stack[i][j])
+		{
 
-#endif
+		}
+	//convert stacked char* to int (if impossible >> Error)
+	//check only nb between INT MIN & INT MAX
+	//check duplicates
+}

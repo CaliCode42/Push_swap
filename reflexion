@@ -152,4 +152,4 @@ fonction pour se deplacer dans la stack.
 chaque int est un noeud de la stack ??
 chaque int est un noeud qui pointe vers le suivant, le dernier pointe vers le premier.
 
-fonction pour check s la stack est triee.
+fonction pour check si la stack est triee.
