@@ -6,13 +6,14 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 17:03:52 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/07 14:24:01 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/07 16:13:50 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 #include <stdio.h>
 
+//create new node and add it at the end of the linked list.
 t_list	*create_add_node(t_list **list, char *number)
 {
 	t_list		*new_node;
@@ -20,13 +21,13 @@ t_list	*create_add_node(t_list **list, char *number)
 
 	if (!list || !number)
 		return (NULL);
-	current.nb = 0;
 	current.nb = ft_atoi(number);
 	new_node = ft_lstnew(current);
 	ft_lstadd_back(list, new_node);
 	return (new_node);
 }
 
+//fetch number from split to new nodes in the linked list.
 void	split_to_nodes(t_list **list, char **stack)
 {
 	t_list	*new_node;
@@ -37,34 +38,13 @@ void	split_to_nodes(t_list **list, char **stack)
 	while (stack[i])
 	{
 		new_node = create_add_node(list, stack[i]);
-		printf("stack[i] = %s\n", stack[i]);
+		printf("stack[%d] = %s\n", i, stack[i]);
 		printf("new_node's content = %i\n", new_node->content.nb);
 		i++;
 	}
 }
 
-/*char	*cut_quotes(char *str)
-{
-	int		i;
-	char	*tmp;
-
-	i = 0;
-	tmp = NULL;
-	tmp = malloc(sizeof(char) * ft_strlen(str) - 1);
-	while (str[i])
-	{
-		if (str[i] == '"')
-			i++;
-		else
-		{
-			tmp[i] = str[i];
-			i++;
-		}
-		tmp[i] = '\0';
-	}
-	return (tmp);
-}*/
-
+//check validity of the str. (Maybe useless...)
 char	*is_str(char *str)
 {
 	int	i;
@@ -81,6 +61,20 @@ char	*is_str(char *str)
 		return (NULL);
 	}
 	return (str);
+}
+
+//Fct which returns the quantity of nb in the **split (stack) str.
+int	get_stack_size(char **stack)
+{
+	int	size;
+
+	size = 0;
+	while (stack[size])
+	{
+		size++;
+	}
+	//printf ("size of stack = [%d]\n", size);
+	return (size);
 }
 
 int	main(int ac, char **av)
@@ -101,7 +95,11 @@ int	main(int ac, char **av)
 		if (is_str(av[1]) != NULL)
 		{
 			stack = ft_split(is_str(av[1]), ' ');
-			//check_stack_errors
+			if (check_stack_errors(stack, get_stack_size(stack)) == 0)
+			{
+				printf("Error. Stack error.");
+				return (1);
+			}
 			split_to_nodes(&a, stack);
 		}
 		else
@@ -119,7 +117,11 @@ int	main(int ac, char **av)
 		{
 			printf("\nav[i] = %s\n", av[i]);
 			stack = ft_split(av[i], ' ');
-			//check_stack_errors
+			if (check_stack_errors(stack, get_stack_size(stack)) == 0)
+			{
+				printf("Error. Stack error.");
+				return (1);
+			}
 			split_to_nodes(&a, stack);
 			i++;
 		}
