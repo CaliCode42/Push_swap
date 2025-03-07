@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 22:02:06 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/06 15:13:21 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/07 14:19:13 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,16 @@
 # define LIBFT_H
 # include <unistd.h>
 
+typedef struct s_content
+{
+	int			nb;
+	int			index;
+}				t_content;
+
 typedef struct s_list
 {
-	int				nb;
-	int				index;
+	t_content		content;
+	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
 
@@ -60,14 +66,14 @@ char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 /* ************************************************************************** */
 //Bonus Part
-t_list	*ft_lstnew(int nb);
+t_list	*ft_lstnew(t_content content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstdelone(t_list *lst, void (*del)(void*));
-void	ft_lstclear(t_list **lst, void (*del)(void*));
-void	ft_lstiter(t_list *lst, void (*f)(void *));
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+void	ft_lstdelone(t_list *lst, void (*del)(t_content));
+void	ft_lstclear(t_list **lst, void (*del)(t_content));
+void	ft_lstiter(t_list *lst, t_content (*f)(t_content));
+t_list	*ft_lstmap(t_list *lst, t_content (*f)(t_content), void (*del)(t_content));
 
 #endif

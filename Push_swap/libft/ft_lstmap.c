@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 19:35:29 by tcali             #+#    #+#             */
-/*   Updated: 2024/11/28 14:33:52 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/07 14:18:38 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ if needed.
 #include <stdlib.h>
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, t_content (*f)(t_content), void (*del)(t_content))
 {
 	t_list	*head;
 	t_list	*node;

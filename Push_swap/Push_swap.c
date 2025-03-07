@@ -6,23 +6,23 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 17:03:52 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/06 14:37:52 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/07 14:24:01 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 #include <stdio.h>
 
-t_list	*create_add_node(t_list **list, char *nb)
+t_list	*create_add_node(t_list **list, char *number)
 {
-	t_list	*new_node;
-	int		number;
+	t_list		*new_node;
+	t_content	current;
 
-	if (!list || !nb)
+	if (!list || !number)
 		return (NULL);
-	number = 0;
-	number = ft_atoi(nb);
-	new_node = ft_lstnew(number);
+	current.nb = 0;
+	current.nb = ft_atoi(number);
+	new_node = ft_lstnew(current);
 	ft_lstadd_back(list, new_node);
 	return (new_node);
 }
@@ -38,12 +38,12 @@ void	split_to_nodes(t_list **list, char **stack)
 	{
 		new_node = create_add_node(list, stack[i]);
 		printf("stack[i] = %s\n", stack[i]);
-		printf("new_node's content = %i\n", new_node->nb);
+		printf("new_node's content = %i\n", new_node->content.nb);
 		i++;
 	}
 }
 
-char	*cut_quotes(char *str)
+/*char	*cut_quotes(char *str)
 {
 	int		i;
 	char	*tmp;
@@ -63,7 +63,7 @@ char	*cut_quotes(char *str)
 		tmp[i] = '\0';
 	}
 	return (tmp);
-}
+}*/
 
 char	*is_str(char *str)
 {
@@ -115,7 +115,7 @@ int	main(int ac, char **av)
 	i = 1;
 	if (ac > 2)
 	{
-			while (i < ac)
+		while (i < ac)
 		{
 			printf("\nav[i] = %s\n", av[i]);
 			stack = ft_split(av[i], ' ');
