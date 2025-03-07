@@ -1,15 +1,18 @@
-Etape 1 : reussir a stocker les nombres de l'entree standard dans une liste chainee >> OK (mais avec des char *)
+Etape 1 : reussir a stocker les nombres de l'entree standard dans une liste chainee >> OK
 
-Etape 2 : stocker les nombres en tant qu'int, pour ca 2 options :
+Etape 2 : stocker les nombres en tant qu'int, pour ca 2 options : >> OK
 -conserver la structure actuelle et faire des casts a chaque fois
 -modifier la structure de base pour stocker directement des int (ou des longs, en focntion de ce qui est le plus pratique.)
 
-Etape 3 : gerer a la fois les str contenant une liste de nombres et les listes de nombres sans guillemets (deja OK pour cette partie) 
+Etape 3 : gerer a la fois les str contenant une liste de nombres et les listes de nombres sans guillemets >> OK
 
-Etape 4 : creer les fonctions de check d'erreurs :
+Etape 4 : creer les fonctions de check d'erreurs : >> OK
 -Uniquement des nombres
 -Pas de doublons
 -INT MIN <= nb >= INT MAX
+
+Etape intermediaire : Mieux comprendre comment fonctionne la liste chainee et reussir a afficher les nombres compris dans les differents
+noeuds en passant d'un noeud au suivant dans une boucle while.
 
 Etape 5 : A ce niveau la, la stack a devrait etre operationnelle. Il est temps de programmer les operations autorisees pour deplacer les
 nombres :
