@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:12:37 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/11 15:46:10 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/11 16:19:13 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	while (current->next)
 		current = current->next;
 	current->next = new;
-	current->next->prev = current;
+	new->prev = current;
 }

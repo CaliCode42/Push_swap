@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 17:03:52 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/11 15:23:38 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/11 16:16:43 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void	split_to_nodes(t_list **list, char **stack)
 	while (stack[i])
 	{
 		new_node = create_add_node(list, stack[i], (i + 1));
-		//printf("stack[%d] = %s\n", i, stack[i]);
-		//printf("new_node's content = %i\n", new_node->content.nb);
+		printf("stack[%d] = %s\n", i, stack[i]);
+		printf("new_node's content = %i\n", new_node->content.nb);
 		i++;
 	}
 }

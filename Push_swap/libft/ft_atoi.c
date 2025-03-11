@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 15:01:27 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/11 10:50:06 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/11 16:15:27 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,5 @@ long long	ft_atoi(const char *nptr)
 	}
 	if (sign == -1)
 		nb = -nb;
-	printf("\nft_atoi : nb = [%lli]\n\n", nb);
 	return (nb);
 }
