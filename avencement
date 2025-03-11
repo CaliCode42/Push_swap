@@ -12,7 +12,7 @@ Etape 4 : creer les fonctions de check d'erreurs : >> OK
 -INT MIN <= nb >= INT MAX
 
 Etape intermediaire : Mieux comprendre comment fonctionne la liste chainee et reussir a afficher les nombres compris dans les differents
-noeuds en passant d'un noeud au suivant dans une boucle while.
+noeuds en passant d'un noeud au suivant dans une boucle while. >>OK
 
 Etape 5 : A ce niveau la, la stack a devrait etre operationnelle. Il est temps de programmer les operations autorisees pour deplacer les
 nombres :
