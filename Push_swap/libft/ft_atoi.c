@@ -6,15 +6,17 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 15:01:27 by tcali             #+#    #+#             */
-/*   Updated: 2024/11/25 09:57:41 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/11 10:50:06 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *nptr)
+#include <stdio.h>
+
+long long	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	sign;
-	int	nb;
+	int			i;
+	int			sign;
+	long long	nb;
 
 	i = 0;
 	sign = 1;
@@ -30,8 +32,11 @@ int	ft_atoi(const char *nptr)
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		nb = (nb * 10) + (nptr[i] - '0') * sign;
+		nb = nb * 10 + (nptr[i] - '0');
 		i++;
 	}
+	if (sign == -1)
+		nb = -nb;
+	printf("\nft_atoi : nb = [%lli]\n\n", nb);
 	return (nb);
 }
