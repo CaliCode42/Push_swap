@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:36:51 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/07 15:24:06 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/11 17:07:15 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,18 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-int	check_stack_errors(char **stack, int size);
+//main.c
+int		get_stack_size(char **stack);
+
+//Read from standard input
+void	split_to_nodes(t_list **list, char **stack);
+char	*stdin_to_str(int arg_nb, char **args);
+
+//errors.c
+int		check_stack_errors(char **stack, int size);
+
+//Nodes management
+t_list	*create_add_node(t_list **list, char *number, int index);
+void	split_to_nodes(t_list **list, char **stack);
 
 #endif

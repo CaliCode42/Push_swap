@@ -6,14 +6,14 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:16:32 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/11 11:19:56 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/11 16:56:10 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 #include <stdio.h>
 
-int	get_sign(char c)
+static int	get_sign(char c)
 {
 	int	sign;
 
@@ -26,7 +26,7 @@ int	get_sign(char c)
 	return (sign);
 }
 
-int	check_overflow(long long nb, int sign)
+static int	check_overflow(long long nb, int sign)
 {
 	if (sign == 1 && nb > 2147483647)
 		return (0);
@@ -38,7 +38,7 @@ int	check_overflow(long long nb, int sign)
 
 //convert stacked char* to int
 //check if only nb between INT MIN & INT MAX
-int	is_valid_nb(char *str, int *value)
+static int	is_valid_nb(char *str, int *value)
 {
 	int 		i;
 	long long	temp;
@@ -68,7 +68,7 @@ int	is_valid_nb(char *str, int *value)
 }
 
 //check duplicates
-int	has_duplicates(int *arr, int size)
+static int	has_duplicates(int *arr, int size)
 {
 	int	i;
 	int	j;
@@ -88,23 +88,6 @@ int	has_duplicates(int *arr, int size)
 	}
 	return (0);
 }
-
-//just a check fct, to print my array of int
-/*void	print_array(int *arr, int size)
-{
-	int	i;
-
-	i = 0;
-	printf("[");
-	while (i < size) 
-	{
-		printf("%d", arr[i]);
-		if (i < size - 1)
-			printf(", ");
-		i++;
-	}
-	printf("]\n");
-}*/
 
 int	check_stack_errors(char **stack, int size)
 {
