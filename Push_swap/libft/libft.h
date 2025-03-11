@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 22:02:06 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/07 14:19:13 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/11 14:39:30 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ typedef struct s_content
 typedef struct s_list
 {
 	t_content		content;
-	size_t			content_size;
+	//size_t			content_size;
+	struct s_list	*prev;
 	struct s_list	*next;
 }				t_list;
 

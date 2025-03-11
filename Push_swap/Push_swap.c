@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 17:03:52 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/07 16:54:41 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/11 15:23:38 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 
 //create new node and add it at the end of the linked list.
-t_list	*create_add_node(t_list **list, char *number)
+t_list	*create_add_node(t_list **list, char *number, int index)
 {
 	t_list		*new_node;
 	t_content	current;
@@ -22,7 +22,10 @@ t_list	*create_add_node(t_list **list, char *number)
 	if (!list || !number)
 		return (NULL);
 	current.nb = ft_atoi(number);
+	current.index = index;
 	new_node = ft_lstnew(current);
+	if (!new_node)
+		return (NULL);
 	ft_lstadd_back(list, new_node);
 	return (new_node);
 }
@@ -37,31 +40,12 @@ void	split_to_nodes(t_list **list, char **stack)
 	new_node = NULL;
 	while (stack[i])
 	{
-		new_node = create_add_node(list, stack[i]);
-		printf("stack[%d] = %s\n", i, stack[i]);
-		printf("new_node's content = %i\n", new_node->content.nb);
+		new_node = create_add_node(list, stack[i], (i + 1));
+		//printf("stack[%d] = %s\n", i, stack[i]);
+		//printf("new_node's content = %i\n", new_node->content.nb);
 		i++;
 	}
 }
-/*
-//check validity of the str. (Maybe useless...)
-char	*is_str(char *str)
-{
-	int	i;
-
-	if (!str)
-		return (NULL);
-	if (str[0] == '"')
-	{
-		i = 1;
-		while (str[i] && str[i] != '"')
-			i++;
-		if (str[i] == '"' && str[i + 1] == '\0')
-			return (str);
-		return (NULL);
-	}
-	return (str);
-}*/
 
 //Fct which returns the quantity of nb in the **split (stack) str.
 int	get_stack_size(char **stack)
@@ -98,6 +82,31 @@ char	*stdin_to_str(int arg_nb, char **args)
 	return (str);
 }
 
+//fct to print my nodes, using the path of the linked list.
+void	print_nodes_linkedlst(t_list *head)
+{
+	t_list	*last;
+
+	last = NULL;
+	printf("_________________\n");
+	printf("Forward list:\n");
+	while (head)
+	{
+		printf("node (%d) : [%d] ---> ", head->content.index, head->content.nb);
+		last = head;
+		head = head->next;
+	}
+	printf("NULL\n");
+	printf("_________________\n");
+	printf("Backward list:\n");
+	while (last)
+	{
+		printf("node (%d) : [%d] ---> ", last->content.index, last->content.nb);
+		last = last->prev;
+	}
+	printf("NULL\n");
+}
+
 int	main(int ac, char **av)
 {
 	t_list	*a;
@@ -132,5 +141,6 @@ int	main(int ac, char **av)
 	while (stack[i])
 		free(stack[i++]);
 	free(stack);
+	print_nodes_linkedlst(a);
 	return (0);
 }
