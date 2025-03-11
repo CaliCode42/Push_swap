@@ -6,13 +6,13 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:36:51 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/11 17:07:15 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/11 17:40:05 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include "libft/libft.h"
+# include "../libft/libft.h"
 # include <unistd.h>
 # include <stdlib.h>
 
@@ -37,5 +37,8 @@ int		check_stack_errors(char **stack, int size);
 //Nodes management
 t_list	*create_add_node(t_list **list, char *number, int index);
 void	split_to_nodes(t_list **list, char **stack);
+
+//Testers
+void	print_nodes_linkedlst(t_list *head);
 
 #endif
