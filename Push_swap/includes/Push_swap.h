@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:36:51 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/12 16:09:53 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/12 23:39:18 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int		check_stack_errors(char **stack, int size);
 //Nodes management
 t_list	*create_add_node(t_list **list, char *number, int index);
 void	split_to_nodes(t_list **list, char **stack);
+void	update_index(t_list *list);
 
 //Operations
 void	swap_a(t_list **a);
@@ -44,6 +45,12 @@ void	swap_b(t_list **b);
 void	swap_both(t_list **a, t_list **b);
 void	push_a(t_list **a, t_list **b);
 void	push_b(t_list **a, t_list **b);
+void	rotate_a(t_list **a);
+void	rotate_b(t_list **b);
+void	rotate_both(t_list **a, t_list **b);
+void	reverse_rotate_a(t_list **a);
+void	reverse_rotate_b(t_list **b);
+void	reverse_rotate_both(t_list **a, t_list **b);
 
 //Testers
 void	print_nodes_linkedlst(t_list *head);

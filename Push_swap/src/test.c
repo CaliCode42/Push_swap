@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:51:41 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/12 16:17:00 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/12 23:46:45 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,16 +67,18 @@ void	ft_testing(t_list **a)
 	if (!*a || !a)
 		return ;
 	printf("________________\n");
-	printf("stack a\n");
+	printf("stack\n");
 	print_nodes_linkedlst(*a);
 	printf("________________\n");
-	push_b(a, &b);
+	rotate_a(a);
 	printf("________________\n");
-	printf("stack a\n");
+	printf("ra\n");
 	print_nodes_linkedlst(*a);
 	printf("________________\n");
-	printf("stack b\n");
-	print_nodes_linkedlst(b);
+	reverse_rotate_b(a);
+	printf("________________\n");
+	printf("rrb\n");
+	print_nodes_linkedlst(*a);
 }
 
 //just a check fct, to print my array of int

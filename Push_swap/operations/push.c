@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 14:43:39 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/12 16:09:48 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/12 23:19:55 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	switch_index(t_list *list1, t_list *list2)
 }
 */
 
-static void	update_index(t_list *list)
+void	update_index(t_list *list)
 {
 	int	index;
 

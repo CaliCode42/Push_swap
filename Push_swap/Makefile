@@ -15,6 +15,8 @@ SRC_FILES = \
 	$(SRC_DIR)/test.c \
 	$(OPS_DIR)/swap.c \
 	$(OPS_DIR)/push.c \
+	$(OPS_DIR)/rotate.c \
+	$(OPS_DIR)/reverse_rotate.c \
 
 #B_SOURCES = \ >>to complete
 
