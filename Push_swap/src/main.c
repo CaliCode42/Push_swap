@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:59:40 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/11 17:33:17 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/12 14:48:08 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ int	main(int ac, char **av)
 	while (stack[i])
 		free(stack[i++]);
 	free(stack);
-	print_nodes_linkedlst(a);
+	ft_testing(&a);
 	return (0);
 }

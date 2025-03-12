@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/11 17:10:32 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/12 14:43:52 by tcali            ###   ########.fr       */
+/*   Created: 2025/03/12 14:43:39 by tcali             #+#    #+#             */
+/*   Updated: 2025/03/12 16:09:48 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_list
 }				t_list;
 */
 
+/*
 static void	switch_index(t_list *list1, t_list *list2)
 {
 	int	tmp;
@@ -29,42 +30,49 @@ static void	switch_index(t_list *list1, t_list *list2)
 	list1->content.index = list2->content.index;
 	list2->content.index = tmp;
 }
+*/
 
-static void	swap_nodes(t_list **list)
+static void	update_index(t_list *list)
 {
-	t_list	*first_node;
-	t_list	*second_node;
+	int	index;
 
-	if (!*list || !list || !(*list)->next)
+	index = 1;
+	while (list)
+	{
+		list->content.index = index;
+		list = list->next;
+		index++;
+	}
+}
+
+static void	push_first_node(t_list **src, t_list **dst)
+{
+	t_list	*first_node_src;
+
+	if (!src || !*src)
 		return ;
-
-	first_node = *list;
-	second_node = (*list)->next;
-	first_node->next = second_node->next;
-	if (second_node->next)
-		second_node->next->prev = first_node;
-	second_node->prev = NULL;
-	second_node->next = first_node;
-	first_node->prev = second_node;
-	*list = second_node;
-	switch_index(*list, (*list)->next);
+	first_node_src = *src;
+	*src = (*src)->next;
+	if (*src)
+		(*src)->prev = NULL;
+	first_node_src->next = *dst;
+	if (*dst)
+	{
+		(*dst)->prev = first_node_src;
+	}
+	*dst = first_node_src;
+	update_index(*src);
+	update_index(*dst);
 }
 
-void	swap_a(t_list **a)
+void	push_b(t_list **a, t_list **b)
 {
-	swap_nodes(a);
-	write(1, "sa\n", 3);
+	push_first_node(a, b);
+	write(1, "pb\n", 3);
 }
 
-void	swap_b(t_list **b)
+void	push_a(t_list **a, t_list **b)
 {
-	swap_nodes(b);
-	write(1, "sb\n", 3);
-}
-
-void	swap_both(t_list **a, t_list **b)
-{
-	swap_nodes(a);
-	swap_nodes(b);
-	write(1, "ss\n", 3);
+	push_first_node(b, a);
+	write(1, "pa\n", 3);
 }

@@ -6,20 +6,39 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:51:41 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/11 17:42:10 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/12 16:12:26 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 #include <stdio.h>
+/*
+typedef struct s_list
+{
+	t_content		content;
+	struct s_list	*prev;
+	struct s_list	*next;
+}				t_list;
+*/
+
+//fct to initialize a list to NULL.
+void	init_list(t_list *list)
+{
+	if (!list)
+		return ;
+	list->content.nb = 0;
+	list->content.index = 0;
+	list->next = NULL;
+	list->prev = NULL;
+}
 
 //fct to print my nodes, using the path of the linked list.
 void	print_nodes_linkedlst(t_list *head)
 {
 	/*t_list	*last;
 
-	last = NULL;*/
-	printf("_________________\n");
+	last = NULL;
+	printf("_________________\n");*/
 	printf("Forward list:\n");
 	while (head)
 	{
@@ -36,6 +55,91 @@ void	print_nodes_linkedlst(t_list *head)
 		last = last->prev;
 	}
 	printf("NULL\n");*/
+}
+
+//fct to call in my main in order to test my other fcts.
+void	ft_testing(t_list **a)
+{
+	t_list	*b;
+
+	b = NULL;
+	init_list(b);
+	if (!*a || !a)
+		return ;
+	printf("________________\n");
+	printf("stack a\n");
+	print_nodes_linkedlst(*a);
+	printf("________________\n");
+	push_b(a, &b);
+	printf("________________\n");
+	printf("stack a\n");
+	print_nodes_linkedlst(*a);
+	printf("________________\n");
+	printf("stack b\n");
+	print_nodes_linkedlst(b);
+
+	printf("________________\n");
+	push_b(a, &b);
+	printf("________________\n");
+	printf("stack a\n");
+	print_nodes_linkedlst(*a);
+	printf("________________\n");
+	printf("stack b\n");
+	print_nodes_linkedlst(b);
+
+	printf("________________\n");
+	push_b(a, &b);
+	printf("________________\n");
+	printf("stack a\n");
+	print_nodes_linkedlst(*a);
+	printf("________________\n");
+	printf("stack b\n");
+	print_nodes_linkedlst(b);
+
+	printf("________________\n");
+	push_b(a, &b);
+	printf("________________\n");
+	printf("stack a\n");
+	print_nodes_linkedlst(*a);
+	printf("________________\n");
+	printf("stack b\n");
+	print_nodes_linkedlst(b);
+
+	printf("________________\n");
+	push_a(a, &b);
+	printf("________________\n");
+	printf("stack a\n");
+	print_nodes_linkedlst(*a);
+	printf("________________\n");
+	printf("stack b\n");
+	print_nodes_linkedlst(b);
+
+	printf("________________\n");
+	push_a(a, &b);
+	printf("________________\n");
+	printf("stack a\n");
+	print_nodes_linkedlst(*a);
+	printf("________________\n");
+	printf("stack b\n");
+	print_nodes_linkedlst(b);
+
+	printf("________________\n");
+	push_a(a, &b);
+	printf("________________\n");
+	printf("stack a\n");
+	print_nodes_linkedlst(*a);
+	printf("________________\n");
+	printf("stack b\n");
+	print_nodes_linkedlst(b);
+
+	printf("________________\n");
+	push_a(a, &b);
+	printf("________________\n");
+	printf("stack a\n");
+	print_nodes_linkedlst(*a);
+	printf("________________\n");
+	printf("stack b\n");
+	print_nodes_linkedlst(b);
 }
 
 //just a check fct, to print my array of int

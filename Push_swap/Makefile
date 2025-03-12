@@ -13,7 +13,8 @@ SRC_FILES = \
 	$(SRC_DIR)/nodes_management.c \
 	$(SRC_DIR)/stdin_to_str.c \
 	$(SRC_DIR)/test.c \
-	#$(OPS_DIR)/swap.c \
+	$(OPS_DIR)/swap.c \
+	$(OPS_DIR)/push.c \
 
 #B_SOURCES = \ >>to complete
 
