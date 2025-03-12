@@ -21,12 +21,12 @@ nombres :
 -ss >> OK
 -pa >> OK
 -pb >> OK
--ra
--rb
--rr
--rra
--rrb
--rrr
+-ra >> OK
+-rb >> OK
+-rr >> OK
+-rra >> OK
+-rrb >> OK
+-rrr >> OK
 
 Etape 6 : Creer un programme qui inclut les operations precedemment creees. Faire des tests avec des nombres aleatoires.
 Pour cette etape le but n'est pas encore d'avoir un algo opti, seulement de mettre en place des mouvements pour comprendre le principe.
