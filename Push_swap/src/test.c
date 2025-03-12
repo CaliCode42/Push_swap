@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:51:41 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/12 16:12:26 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/12 16:17:00 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,46 @@ void	print_nodes_linkedlst(t_list *head)
 }
 
 //fct to call in my main in order to test my other fcts.
+void	ft_testing(t_list **a)
+{
+	t_list	*b;
+
+	b = NULL;
+	init_list(b);
+	if (!*a || !a)
+		return ;
+	printf("________________\n");
+	printf("stack a\n");
+	print_nodes_linkedlst(*a);
+	printf("________________\n");
+	push_b(a, &b);
+	printf("________________\n");
+	printf("stack a\n");
+	print_nodes_linkedlst(*a);
+	printf("________________\n");
+	printf("stack b\n");
+	print_nodes_linkedlst(b);
+}
+
+//just a check fct, to print my array of int
+/*void	print_array(int *arr, int size)
+{
+	int	i;
+
+	i = 0;
+	printf("[");
+	while (i < size) 
+	{
+		printf("%d", arr[i]);
+		if (i < size - 1)
+			printf(", ");
+		i++;
+	}
+	printf("]\n");
+}*/
+
+//tester for my push fcts
+/*
 void	ft_testing(t_list **a)
 {
 	t_list	*b;
@@ -141,20 +181,4 @@ void	ft_testing(t_list **a)
 	printf("stack b\n");
 	print_nodes_linkedlst(b);
 }
-
-//just a check fct, to print my array of int
-/*void	print_array(int *arr, int size)
-{
-	int	i;
-
-	i = 0;
-	printf("[");
-	while (i < size) 
-	{
-		printf("%d", arr[i]);
-		if (i < size - 1)
-			printf(", ");
-		i++;
-	}
-	printf("]\n");
-}*/
+*/
