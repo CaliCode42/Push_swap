@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:51:41 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/12 23:46:45 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/14 15:28:02 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	print_nodes_linkedlst(t_list *head)
 void	ft_testing(t_list **a)
 {
 	t_list	*b;
+	t_list	*test;
 
 	b = NULL;
 	init_list(b);
@@ -70,15 +71,9 @@ void	ft_testing(t_list **a)
 	printf("stack\n");
 	print_nodes_linkedlst(*a);
 	printf("________________\n");
-	rotate_a(a);
+	test = find_max_lst(a);
+	printf("max nb = %d\n", test->content.nb);
 	printf("________________\n");
-	printf("ra\n");
-	print_nodes_linkedlst(*a);
-	printf("________________\n");
-	reverse_rotate_b(a);
-	printf("________________\n");
-	printf("rrb\n");
-	print_nodes_linkedlst(*a);
 }
 
 //just a check fct, to print my array of int

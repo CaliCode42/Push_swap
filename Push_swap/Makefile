@@ -3,6 +3,7 @@ NAME = Push_swap
 #Directories
 SRC_DIR = src
 OPS_DIR = operations
+SORT_DIR = sorting
 LIBFT_DIR = libft
 INCLUDES = includes
 
@@ -17,6 +18,9 @@ SRC_FILES = \
 	$(OPS_DIR)/push.c \
 	$(OPS_DIR)/rotate.c \
 	$(OPS_DIR)/reverse_rotate.c \
+	$(SORT_DIR)/is_sorted.c \
+	$(SORT_DIR)/find_min_lst.c \
+	$(SORT_DIR)/find_max_lst.c \
 
 #B_SOURCES = \ >>to complete
 

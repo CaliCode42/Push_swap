@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 12:36:51 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/12 23:39:18 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/14 15:25:04 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,12 @@ void	rotate_both(t_list **a, t_list **b);
 void	reverse_rotate_a(t_list **a);
 void	reverse_rotate_b(t_list **b);
 void	reverse_rotate_both(t_list **a, t_list **b);
+
+//Sorting
+int		is_sorted(t_list *list);
+int		is_rev_sorted(t_list *list);
+t_list	*find_min_lst(t_list **list);
+t_list	*find_max_lst(t_list **list);
 
 //Testers
 void	print_nodes_linkedlst(t_list *head);
