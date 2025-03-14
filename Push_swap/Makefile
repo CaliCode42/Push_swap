@@ -21,6 +21,7 @@ SRC_FILES = \
 	$(SORT_DIR)/is_sorted.c \
 	$(SORT_DIR)/find_min_lst.c \
 	$(SORT_DIR)/find_max_lst.c \
+	$(SORT_DIR)/mini_sort.c \
 
 #B_SOURCES = \ >>to complete
 

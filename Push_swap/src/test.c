@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:51:41 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/14 15:28:02 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/14 17:08:21 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,18 +61,23 @@ void	print_nodes_linkedlst(t_list *head)
 void	ft_testing(t_list **a)
 {
 	t_list	*b;
-	t_list	*test;
 
 	b = NULL;
 	init_list(b);
 	if (!*a || !a)
 		return ;
 	printf("________________\n");
-	printf("stack\n");
+	printf("stack a\n");
 	print_nodes_linkedlst(*a);
 	printf("________________\n");
-	test = find_max_lst(a);
-	printf("max nb = %d\n", test->content.nb);
+	if (ft_lstsize(*a) == 3)
+	{
+		while (!is_sorted(*a))
+			micro_sort(a);
+		if (is_sorted(*a))
+			printf("stack a IS sorted.\n");
+	}
+	print_nodes_linkedlst(*a);
 	printf("________________\n");
 }
 
