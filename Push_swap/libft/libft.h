@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 22:02:06 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/11 14:39:30 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/18 17:09:00 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(t_content));
 void	ft_lstclear(t_list **lst, void (*del)(t_content));
 void	ft_lstiter(t_list *lst, t_content (*f)(t_content));
-t_list	*ft_lstmap(t_list *lst, t_content (*f)(t_content), void (*del)(t_content));
+t_list	*ft_lstmap(t_list *lst, t_content (*f)(t_content),
+			void (*del)(t_content));
 
 #endif

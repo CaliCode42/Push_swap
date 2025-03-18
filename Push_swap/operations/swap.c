@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:10:32 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/12 14:43:52 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/18 17:09:33 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ static void	swap_nodes(t_list **list)
 
 	if (!*list || !list || !(*list)->next)
 		return ;
-
 	first_node = *list;
 	second_node = (*list)->next;
 	first_node->next = second_node->next;

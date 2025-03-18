@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:16:32 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/11 16:56:10 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/18 17:08:00 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	check_overflow(long long nb, int sign)
 //check if only nb between INT MIN & INT MAX
 static int	is_valid_nb(char *str, int *value)
 {
-	int 		i;
+	int			i;
 	long long	temp;
 	int			sign;
 
@@ -107,12 +107,10 @@ int	check_stack_errors(char **stack, int size)
 		if (!is_valid_nb(stack[i], &value))
 			return (free(numbers), 0);
 		numbers[i] = value;
-		//printf("current nb = [%d]\n", numbers[i]);
 		i++;
 	}
 	if (has_duplicates(numbers, size))
 		return (free(numbers), 0);
-	//print_array(numbers, size);
 	free(numbers);
 	return (1);
 }

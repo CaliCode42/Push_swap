@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:51:41 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/14 17:08:21 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/18 17:10:21 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,26 +35,13 @@ void	init_list(t_list *list)
 //fct to print my nodes, using the path of the linked list.
 void	print_nodes_linkedlst(t_list *head)
 {
-	/*t_list	*last;
-
-	last = NULL;
-	printf("_________________\n");*/
 	printf("Forward list:\n");
 	while (head)
 	{
 		printf("node (%d) : [%d] ---> ", head->content.index, head->content.nb);
-		//last = head;
 		head = head->next;
 	}
 	printf("NULL\n");
-	/*printf("_________________\n");
-	printf("Backward list:\n");
-	while (last)
-	{
-		printf("node (%d) : [%d] ---> ", last->content.index, last->content.nb);
-		last = last->prev;
-	}
-	printf("NULL\n");*/
 }
 
 //fct to call in my main in order to test my other fcts.
