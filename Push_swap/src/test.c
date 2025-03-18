@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:51:41 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/18 17:10:21 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/18 17:32:07 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ void	ft_testing(t_list **a)
 	printf("stack a\n");
 	print_nodes_linkedlst(*a);
 	printf("________________\n");
-	if (ft_lstsize(*a) == 3)
+	if (ft_lstsize(*a) == 4)
 	{
 		while (!is_sorted(*a))
-			micro_sort(a);
+			sort_four(a, &b);
 		if (is_sorted(*a))
 			printf("stack a IS sorted.\n");
 	}

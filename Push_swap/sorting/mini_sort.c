@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 18:38:46 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/18 17:03:31 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/18 17:30:35 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdio.h>
 
 //Micro sort if only 2 nodes in stack a (invert if not sorted).
+
 //Must call this fct only if size of list = 3 (use ft_lstsize).
 //And also only when list is NOT sorted (must check before).
 void	micro_sort(t_list **list)
@@ -43,42 +44,30 @@ void	micro_sort(t_list **list)
 		return ;
 	}
 }
-	/*if (min->content.index == 1 && max->content.index == 2 ||
-		min->content.index == 2 && max->content.index == 3 ||
-		min->content.index == 3 && max->content.index == 1)*/
-	//
-	/*if (is_rev_sorted(*list))
-	{
-		rotate_a(list);
-		swap_a(list);
-		//return ;
-	}
-	min = find_min_lst(list);
-	if (min->content.index == 1 && !is_sorted(*list))
-	{
-		reverse_rotate_a(list);
-		swap_a(list);
-		//return ;
-	}
-	max = find_max_lst(list);
-	if (min->content.index == 2)
-	{
-		if (max->content.index == 1)
-		{
-			rotate_a(list);
-			return ;
-		}
-		swap_a(list);
-		return ;
-	}
-	if (min->content.index == 3 && max->content.index == 2)
-	{
-		reverse_rotate_a(list);
-		return ;
-	}*/
-
-//Mini sort if only 3 nodes in stack a
 
 //Mini sort if only 4 nodes in stack a (2 + 2 ou 3 + 1 ??)
+
+//Must call this fct only if size of list = 3 (use ft_lstsize).
+//And also only when list is NOT sorted (must check before).
+void	sort_four(t_list **a, t_list **b)
+{
+	t_list	*min;
+	t_list	*max;
+	int		is_nb_max_pushed;
+
+	min = find_min_lst(a);
+	max = find_max_lst(a);
+	is_nb_max_pushed = 0;
+	while (min->content.index != 1 && min->content.index != 1)
+		rotate_a(a);
+	if (max->content.index == 1)
+		is_nb_max_pushed = 1;
+	push_b(a, b);
+	micro_sort(a);
+	push_a(a, b);
+	if (is_nb_max_pushed == 1)
+		rotate_a(a);
+	return ;
+}
 
 //Mini sort if only 5 nodes in stack a
