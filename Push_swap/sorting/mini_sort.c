@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 18:38:46 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/18 17:37:13 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/18 17:40:44 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	micro_sort(t_list **list)
 
 //Mini sort if only 4 nodes in stack a (2 + 2 ou 3 + 1 ??)
 
-//Must call this fct only if size of list = 3 (use ft_lstsize).
+//Must call this fct only if size of list = 4 (use ft_lstsize).
 //And also only when list is NOT sorted (must check before).
 void	sort_four(t_list **a, t_list **b)
 {
@@ -71,6 +71,9 @@ void	sort_four(t_list **a, t_list **b)
 }
 
 //Mini sort if only 5 nodes in stack a
+
+//Must call this fct only if size of list = 5 (use ft_lstsize).
+//And also only when list is NOT sorted (must check before).
 void	sort_five(t_list **a, t_list **b)
 {
 	t_list	*min;
