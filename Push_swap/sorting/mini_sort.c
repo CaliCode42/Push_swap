@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 18:38:46 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/18 17:30:35 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/18 17:37:13 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,3 +71,23 @@ void	sort_four(t_list **a, t_list **b)
 }
 
 //Mini sort if only 5 nodes in stack a
+void	sort_five(t_list **a, t_list **b)
+{
+	t_list	*min;
+	t_list	*max;
+	int		is_nb_max_pushed;
+
+	min = find_min_lst(a);
+	max = find_max_lst(a);
+	is_nb_max_pushed = 0;
+	while (min->content.index != 1 && min->content.index != 1)
+		rotate_a(a);
+	if (max->content.index == 1)
+		is_nb_max_pushed = 1;
+	push_b(a, b);
+	sort_four(a, b);
+	push_a(a, b);
+	if (is_nb_max_pushed == 1)
+		rotate_a(a);
+	return ;
+}
