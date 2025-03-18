@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 18:38:46 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/14 17:17:58 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/18 17:03:31 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,33 @@ void	micro_sort(t_list **list)
 	t_list	*min;
 	t_list	*max;
 
-	if (is_rev_sorted(*list))
+	min = find_min_lst(list);
+	max = find_max_lst(list);
+	if (max->content.index == 2 && min->content.index == 3)
+	{
+		reverse_rotate_a(list);
+		return ;
+	}
+	if (max->content.index == 1 && min->content.index == 2)
+	{
+		rotate_a(list);
+		return ;
+	}
+	else
+	{
+		if (min->content.index == 1 && max->content.index == 2)
+			reverse_rotate_a(list);
+		if (max->content.index == 1 && min->content.index == 3)
+			rotate_a(list);
+		swap_a(list);
+		return ;
+	}
+}
+	/*if (min->content.index == 1 && max->content.index == 2 ||
+		min->content.index == 2 && max->content.index == 3 ||
+		min->content.index == 3 && max->content.index == 1)*/
+	//
+	/*if (is_rev_sorted(*list))
 	{
 		rotate_a(list);
 		swap_a(list);
@@ -49,8 +75,7 @@ void	micro_sort(t_list **list)
 	{
 		reverse_rotate_a(list);
 		return ;
-	}
-}
+	}*/
 
 //Mini sort if only 3 nodes in stack a
 

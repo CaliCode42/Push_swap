@@ -29,7 +29,7 @@ SRC_FILES = \
 OBJ_FILES = $(SRC_FILES:.c=.o)
 #B_OBJ_FILES = >>to complete
 
-#COmpilation
+#Compilation
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I$(INCLUDES) -I$(LIBFT_DIR)
 
