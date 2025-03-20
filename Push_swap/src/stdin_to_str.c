@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:57:32 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/18 17:09:05 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/20 13:05:21 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,5 @@ char	*stdin_to_str(int arg_nb, char **args)
 		free(tmp);
 		i++;
 	}
-	printf("stdin_to_str : str = [%s]\n", str);
 	return (str);
 }

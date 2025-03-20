@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 14:43:39 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/19 15:10:12 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/20 12:49:37 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,16 +70,14 @@ static void	push_first_node(t_list **src, t_list **dst)
 	update_index(*dst);
 }
 
-void	push_b(t_list **a, t_list **b, int *operations_count)
+void	push_b(t_list **a, t_list **b)
 {
 	push_first_node(a, b);
-	operations_count++;
 	write(1, "pb\n", 3);
 }
 
-void	push_a(t_list **a, t_list **b, int *operations_count)
+void	push_a(t_list **a, t_list **b)
 {
 	push_first_node(b, a);
-	operations_count++;
 	write(1, "pa\n", 3);
 }

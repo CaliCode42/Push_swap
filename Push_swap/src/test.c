@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:51:41 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/19 15:12:08 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/20 12:50:58 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,8 @@ void	print_nodes_linkedlst(t_list *head)
 void	ft_testing(t_list **a)
 {
 	t_list	*b;
-	int		*operations_count;
 
 	b = NULL;
-	operations_count = 0;
 	init_list(b);
 	if (!*a || !a)
 		return ;
@@ -60,7 +58,7 @@ void	ft_testing(t_list **a)
 	print_nodes_linkedlst(*a);
 	printf("________________\n");
 	while (!is_sorted(*a))
-		selection_sort(a, &b, operations_count);
+		selection_sort(a, &b);
 	if (is_sorted(*a))
 		printf("stack a IS sorted.\n");
 	printf("stack a\n");
@@ -68,7 +66,6 @@ void	ft_testing(t_list **a)
 	printf("stack b\n");
 	print_nodes_linkedlst(b);
 	printf("________________\n");
-	printf("Total operations: %ls\n", operations_count);
 }
 
 //just a check fct, to print my array of int

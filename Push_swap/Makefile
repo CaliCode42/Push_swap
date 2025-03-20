@@ -13,7 +13,6 @@ SRC_FILES = \
 	$(SRC_DIR)/main.c \
 	$(SRC_DIR)/nodes_management.c \
 	$(SRC_DIR)/stdin_to_str.c \
-	$(SRC_DIR)/test.c \
 	$(OPS_DIR)/swap.c \
 	$(OPS_DIR)/push.c \
 	$(OPS_DIR)/rotate.c \

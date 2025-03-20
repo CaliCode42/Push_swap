@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 18:38:46 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/19 15:10:54 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/20 12:48:27 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 //Must call this fct only if size of list = 3 (use ft_lstsize).
 //And also only when list is NOT sorted (must check before).
-void	micro_sort(t_list **list, int *operations_count)
+void	micro_sort(t_list **list)
 {
 	t_list	*min;
 	t_list	*max;
@@ -26,21 +26,21 @@ void	micro_sort(t_list **list, int *operations_count)
 	max = find_max_lst(list);
 	if (max->content.index == 2 && min->content.index == 3)
 	{
-		reverse_rotate_a(list, operations_count);
+		reverse_rotate_a(list);
 		return ;
 	}
 	if (max->content.index == 1 && min->content.index == 2)
 	{
-		rotate_a(list, operations_count);
+		rotate_a(list);
 		return ;
 	}
 	else
 	{
 		if (min->content.index == 1 && max->content.index == 2)
-			reverse_rotate_a(list, operations_count);
+			reverse_rotate_a(list);
 		if (max->content.index == 1 && min->content.index == 3)
-			rotate_a(list, operations_count);
-		swap_a(list, operations_count);
+			rotate_a(list);
+		swap_a(list);
 		return ;
 	}
 }
@@ -49,7 +49,7 @@ void	micro_sort(t_list **list, int *operations_count)
 
 //Must call this fct only if size of list = 4 (use ft_lstsize).
 //And also only when list is NOT sorted (must check before).
-void	sort_four(t_list **a, t_list **b, int *operations_count)
+void	sort_four(t_list **a, t_list **b)
 {
 	t_list	*min;
 	t_list	*max;
@@ -59,14 +59,14 @@ void	sort_four(t_list **a, t_list **b, int *operations_count)
 	max = find_max_lst(a);
 	is_nb_max_pushed = 0;
 	while (min->content.index != 1 && min->content.index != 1)
-		rotate_a(a, operations_count);
+		rotate_a(a);
 	if (max->content.index == 1)
 		is_nb_max_pushed = 1;
-	push_b(a, b, operations_count);
-	micro_sort(a, operations_count);
-	push_a(a, b, operations_count);
+	push_b(a, b);
+	micro_sort(a);
+	push_a(a, b);
 	if (is_nb_max_pushed == 1)
-		rotate_a(a, operations_count);
+		rotate_a(a);
 	return ;
 }
 
@@ -74,7 +74,7 @@ void	sort_four(t_list **a, t_list **b, int *operations_count)
 
 //Must call this fct only if size of list = 5 (use ft_lstsize).
 //And also only when list is NOT sorted (must check before).
-void	sort_five(t_list **a, t_list **b, int *operations_count)
+void	sort_five(t_list **a, t_list **b)
 {
 	t_list	*min;
 	t_list	*max;
@@ -84,13 +84,13 @@ void	sort_five(t_list **a, t_list **b, int *operations_count)
 	max = find_max_lst(a);
 	is_nb_max_pushed = 0;
 	while (min->content.index != 1 && min->content.index != 1)
-		rotate_a(a, operations_count);
+		rotate_a(a);
 	if (max->content.index == 1)
 		is_nb_max_pushed = 1;
-	push_b(a, b, operations_count);
-	sort_four(a, b, operations_count);
-	push_a(a, b, operations_count);
+	push_b(a, b);
+	sort_four(a, b);
+	push_a(a, b);
 	if (is_nb_max_pushed == 1)
-		rotate_a(a, operations_count);
+		rotate_a(a);
 	return ;
 }
