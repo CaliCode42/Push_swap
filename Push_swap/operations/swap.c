@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 17:10:32 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/18 17:09:33 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/19 15:09:47 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,21 +49,24 @@ static void	swap_nodes(t_list **list)
 	switch_index(*list, (*list)->next);
 }
 
-void	swap_a(t_list **a)
+void	swap_a(t_list **a, int *operations_count)
 {
 	swap_nodes(a);
+	operations_count++;
 	write(1, "sa\n", 3);
 }
 
-void	swap_b(t_list **b)
+void	swap_b(t_list **b, int *operations_count)
 {
 	swap_nodes(b);
+	operations_count++;
 	write(1, "sb\n", 3);
 }
 
-void	swap_both(t_list **a, t_list **b)
+void	swap_both(t_list **a, t_list **b, int *operations_count)
 {
 	swap_nodes(a);
 	swap_nodes(b);
+	operations_count++;
 	write(1, "ss\n", 3);
 }

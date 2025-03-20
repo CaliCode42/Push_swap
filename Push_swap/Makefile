@@ -1,4 +1,4 @@
-NAME = Push_swap
+NAME = push_swap
 
 #Directories
 SRC_DIR = src
@@ -22,6 +22,7 @@ SRC_FILES = \
 	$(SORT_DIR)/find_min_lst.c \
 	$(SORT_DIR)/find_max_lst.c \
 	$(SORT_DIR)/mini_sort.c \
+	$(SORT_DIR)/selection_sort.c \
 
 #B_SOURCES = \ >>to complete
 

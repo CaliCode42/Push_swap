@@ -6,7 +6,7 @@
 /*   By: tcali <tcali@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 23:31:16 by tcali             #+#    #+#             */
-/*   Updated: 2025/03/12 23:47:21 by tcali            ###   ########.fr       */
+/*   Updated: 2025/03/19 15:10:00 by tcali            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,24 @@ static void	reverse_rotate_list(t_list **list)
 	update_index(*list);
 }
 
-void	reverse_rotate_a(t_list **a)
+void	reverse_rotate_a(t_list **a, int *operations_count)
 {
 	reverse_rotate_list(a);
+	operations_count++;
 	write(1, "rra\n", 4);
 }
 
-void	reverse_rotate_b(t_list **b)
+void	reverse_rotate_b(t_list **b, int *operations_count)
 {
 	reverse_rotate_list(b);
+	operations_count++;
 	write(1, "rrb\n", 4);
 }
 
-void	reverse_rotate_both(t_list **a, t_list **b)
+void	reverse_rotate_both(t_list **a, t_list **b, int *operations_count)
 {
 	reverse_rotate_list(a);
 	reverse_rotate_list(b);
+	operations_count++;
 	write(1, "rrr\n", 4);
 }
